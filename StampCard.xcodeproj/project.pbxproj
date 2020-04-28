@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46056589AA269B18CB66F331 /* Pods_StampCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D030574BF9D205D0E544723 /* Pods_StampCard.framework */; };
+		557CD643D4E0B429FEE5BA35 /* Pods_StampCardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E7724EE3EA69278448D0D0A /* Pods_StampCardTests.framework */; };
+		AE69AF2D2458202500CB297B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE69AF2C2458202500CB297B /* GoogleService-Info.plist */; };
 		AEF0A2E924515C3B000664C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A2E824515C3B000664C4 /* AppDelegate.swift */; };
 		AEF0A2EB24515C3B000664C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A2EA24515C3B000664C4 /* SceneDelegate.swift */; };
 		AEF0A2EE24515C3B000664C4 /* StampCard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A2EC24515C3B000664C4 /* StampCard.xcdatamodeld */; };
@@ -16,6 +19,17 @@
 		AEF0A2F824515C3E000664C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF0A2F624515C3E000664C4 /* LaunchScreen.storyboard */; };
 		AEF0A30324515C3F000664C4 /* StampCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A30224515C3F000664C4 /* StampCardTests.swift */; };
 		AEF0A30E24515C3F000664C4 /* StampCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A30D24515C3F000664C4 /* StampCardUITests.swift */; };
+		AEF0A31E2451A122000664C4 /* QRCodeDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A31D2451A122000664C4 /* QRCodeDisplayView.swift */; };
+		AEF0A3202452816A000664C4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A31F2452816A000664C4 /* LoginView.swift */; };
+		AEF0A32224528783000664C4 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A32124528783000664C4 /* CreateAccountView.swift */; };
+		AEF0A324245288AD000664C4 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A323245288AD000664C4 /* ChangePasswordView.swift */; };
+		AEF0A326245289A8000664C4 /* AccountInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A325245289A8000664C4 /* AccountInfoView.swift */; };
+		AEF0A3282452C91D000664C4 /* ChangeEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A3272452C91D000664C4 /* ChangeEmailView.swift */; };
+		AEF0A32A2452CE78000664C4 /* MenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A3292452CE78000664C4 /* MenuRow.swift */; };
+		AEF0A32C2452CEC8000664C4 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A32B2452CEC8000664C4 /* MenuView.swift */; };
+		AEF0A32E2452CF0A000664C4 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A32D2452CF0A000664C4 /* SideMenuView.swift */; };
+		AEF0A3302452CFD7000664C4 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A32F2452CFD7000664C4 /* Menu.swift */; };
+		F41A1E08691699885C4B4B86 /* Pods_StampCard_StampCardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D424357AD8E4261782D860D3 /* Pods_StampCard_StampCardUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +50,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24E5611E96B96172936EC141 /* Pods-StampCardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StampCardTests.release.xcconfig"; path = "Target Support Files/Pods-StampCardTests/Pods-StampCardTests.release.xcconfig"; sourceTree = "<group>"; };
+		2E1C093DA5A9C1547FD53F70 /* Pods-StampCard-StampCardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StampCard-StampCardUITests.debug.xcconfig"; path = "Target Support Files/Pods-StampCard-StampCardUITests/Pods-StampCard-StampCardUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2E8896AD732EF7FFAFF1695B /* Pods-StampCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StampCard.release.xcconfig"; path = "Target Support Files/Pods-StampCard/Pods-StampCard.release.xcconfig"; sourceTree = "<group>"; };
+		2FB134C3A1F7E72033030965 /* Pods-StampCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StampCard.debug.xcconfig"; path = "Target Support Files/Pods-StampCard/Pods-StampCard.debug.xcconfig"; sourceTree = "<group>"; };
+		3E7724EE3EA69278448D0D0A /* Pods_StampCardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StampCardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D030574BF9D205D0E544723 /* Pods_StampCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StampCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B91237397A861A1DF10EFD8 /* Pods-StampCardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StampCardTests.debug.xcconfig"; path = "Target Support Files/Pods-StampCardTests/Pods-StampCardTests.debug.xcconfig"; sourceTree = "<group>"; };
+		857409F316CC63FBBFA0D423 /* Pods-StampCard-StampCardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StampCard-StampCardUITests.release.xcconfig"; path = "Target Support Files/Pods-StampCard-StampCardUITests/Pods-StampCard-StampCardUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AE69AF2C2458202500CB297B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AEF0A2E524515C3B000664C4 /* StampCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StampCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF0A2E824515C3B000664C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEF0A2EA24515C3B000664C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +74,17 @@
 		AEF0A30924515C3F000664C4 /* StampCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StampCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF0A30D24515C3F000664C4 /* StampCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCardUITests.swift; sourceTree = "<group>"; };
 		AEF0A30F24515C3F000664C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEF0A31D2451A122000664C4 /* QRCodeDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeDisplayView.swift; sourceTree = "<group>"; };
+		AEF0A31F2452816A000664C4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AEF0A32124528783000664C4 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		AEF0A323245288AD000664C4 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		AEF0A325245289A8000664C4 /* AccountInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoView.swift; sourceTree = "<group>"; };
+		AEF0A3272452C91D000664C4 /* ChangeEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailView.swift; sourceTree = "<group>"; };
+		AEF0A3292452CE78000664C4 /* MenuRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRow.swift; sourceTree = "<group>"; };
+		AEF0A32B2452CEC8000664C4 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		AEF0A32D2452CF0A000664C4 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		AEF0A32F2452CFD7000664C4 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		D424357AD8E4261782D860D3 /* Pods_StampCard_StampCardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StampCard_StampCardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46056589AA269B18CB66F331 /* Pods_StampCard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				557CD643D4E0B429FEE5BA35 /* Pods_StampCardTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +108,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41A1E08691699885C4B4B86 /* Pods_StampCard_StampCardUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D6E4D89EDAE0490EAD2B423 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D030574BF9D205D0E544723 /* Pods_StampCard.framework */,
+				D424357AD8E4261782D860D3 /* Pods_StampCard_StampCardUITests.framework */,
+				3E7724EE3EA69278448D0D0A /* Pods_StampCardTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AEF0A2DC24515C3B000664C4 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +132,8 @@
 				AEF0A30124515C3F000664C4 /* StampCardTests */,
 				AEF0A30C24515C3F000664C4 /* StampCardUITests */,
 				AEF0A2E624515C3B000664C4 /* Products */,
+				DCD871326D7D23078D16485E /* Pods */,
+				0D6E4D89EDAE0490EAD2B423 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,9 +153,20 @@
 				AEF0A2E824515C3B000664C4 /* AppDelegate.swift */,
 				AEF0A2EA24515C3B000664C4 /* SceneDelegate.swift */,
 				AEF0A2EF24515C3B000664C4 /* ContentView.swift */,
+				AEF0A31D2451A122000664C4 /* QRCodeDisplayView.swift */,
+				AEF0A31F2452816A000664C4 /* LoginView.swift */,
+				AEF0A3292452CE78000664C4 /* MenuRow.swift */,
+				AEF0A32B2452CEC8000664C4 /* MenuView.swift */,
+				AEF0A32D2452CF0A000664C4 /* SideMenuView.swift */,
+				AEF0A32F2452CFD7000664C4 /* Menu.swift */,
+				AEF0A323245288AD000664C4 /* ChangePasswordView.swift */,
+				AEF0A3272452C91D000664C4 /* ChangeEmailView.swift */,
+				AEF0A325245289A8000664C4 /* AccountInfoView.swift */,
+				AEF0A32124528783000664C4 /* CreateAccountView.swift */,
 				AEF0A2F124515C3E000664C4 /* Assets.xcassets */,
 				AEF0A2F624515C3E000664C4 /* LaunchScreen.storyboard */,
 				AEF0A2F924515C3E000664C4 /* Info.plist */,
+				AE69AF2C2458202500CB297B /* GoogleService-Info.plist */,
 				AEF0A2EC24515C3B000664C4 /* StampCard.xcdatamodeld */,
 				AEF0A2F324515C3E000664C4 /* Preview Content */,
 			);
@@ -139,6 +199,20 @@
 			path = StampCardUITests;
 			sourceTree = "<group>";
 		};
+		DCD871326D7D23078D16485E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FB134C3A1F7E72033030965 /* Pods-StampCard.debug.xcconfig */,
+				2E8896AD732EF7FFAFF1695B /* Pods-StampCard.release.xcconfig */,
+				2E1C093DA5A9C1547FD53F70 /* Pods-StampCard-StampCardUITests.debug.xcconfig */,
+				857409F316CC63FBBFA0D423 /* Pods-StampCard-StampCardUITests.release.xcconfig */,
+				7B91237397A861A1DF10EFD8 /* Pods-StampCardTests.debug.xcconfig */,
+				24E5611E96B96172936EC141 /* Pods-StampCardTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEF0A31224515C3F000664C4 /* Build configuration list for PBXNativeTarget "StampCard" */;
 			buildPhases = (
+				5758D6F22677801389B80E6C /* [CP] Check Pods Manifest.lock */,
 				AEF0A2E124515C3B000664C4 /* Sources */,
 				AEF0A2E224515C3B000664C4 /* Frameworks */,
 				AEF0A2E324515C3B000664C4 /* Resources */,
+				BEA72F313D20F2811B20055C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +239,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEF0A31524515C3F000664C4 /* Build configuration list for PBXNativeTarget "StampCardTests" */;
 			buildPhases = (
+				1BC23D346C74076932E7FCA5 /* [CP] Check Pods Manifest.lock */,
 				AEF0A2FA24515C3F000664C4 /* Sources */,
 				AEF0A2FB24515C3F000664C4 /* Frameworks */,
 				AEF0A2FC24515C3F000664C4 /* Resources */,
@@ -181,9 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEF0A31824515C3F000664C4 /* Build configuration list for PBXNativeTarget "StampCardUITests" */;
 			buildPhases = (
+				17E4A686DE0579AE0F670B0E /* [CP] Check Pods Manifest.lock */,
 				AEF0A30524515C3F000664C4 /* Sources */,
 				AEF0A30624515C3F000664C4 /* Frameworks */,
 				AEF0A30724515C3F000664C4 /* Resources */,
+				AB716C9F1C82ADF11DF3642A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -244,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEF0A2F824515C3E000664C4 /* LaunchScreen.storyboard in Resources */,
+				AE69AF2D2458202500CB297B /* GoogleService-Info.plist in Resources */,
 				AEF0A2F524515C3E000664C4 /* Preview Assets.xcassets in Resources */,
 				AEF0A2F224515C3E000664C4 /* Assets.xcassets in Resources */,
 			);
@@ -265,15 +345,128 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17E4A686DE0579AE0F670B0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StampCard-StampCardUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1BC23D346C74076932E7FCA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StampCardTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5758D6F22677801389B80E6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StampCard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB716C9F1C82ADF11DF3642A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StampCard-StampCardUITests/Pods-StampCard-StampCardUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StampCard-StampCardUITests/Pods-StampCard-StampCardUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StampCard-StampCardUITests/Pods-StampCard-StampCardUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEA72F313D20F2811B20055C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StampCard/Pods-StampCard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StampCard/Pods-StampCard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StampCard/Pods-StampCard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AEF0A2E124515C3B000664C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF0A3202452816A000664C4 /* LoginView.swift in Sources */,
+				AEF0A32C2452CEC8000664C4 /* MenuView.swift in Sources */,
+				AEF0A3302452CFD7000664C4 /* Menu.swift in Sources */,
+				AEF0A3282452C91D000664C4 /* ChangeEmailView.swift in Sources */,
+				AEF0A32E2452CF0A000664C4 /* SideMenuView.swift in Sources */,
 				AEF0A2EE24515C3B000664C4 /* StampCard.xcdatamodeld in Sources */,
 				AEF0A2E924515C3B000664C4 /* AppDelegate.swift in Sources */,
+				AEF0A32224528783000664C4 /* CreateAccountView.swift in Sources */,
+				AEF0A32A2452CE78000664C4 /* MenuRow.swift in Sources */,
 				AEF0A2F024515C3B000664C4 /* ContentView.swift in Sources */,
+				AEF0A326245289A8000664C4 /* AccountInfoView.swift in Sources */,
 				AEF0A2EB24515C3B000664C4 /* SceneDelegate.swift in Sources */,
+				AEF0A31E2451A122000664C4 /* QRCodeDisplayView.swift in Sources */,
+				AEF0A324245288AD000664C4 /* ChangePasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +629,7 @@
 		};
 		AEF0A31324515C3F000664C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FB134C3A1F7E72033030965 /* Pods-StampCard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,7 +641,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kazudmb.StampCard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kazudmb.StampCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,6 +650,7 @@
 		};
 		AEF0A31424515C3F000664C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E8896AD732EF7FFAFF1695B /* Pods-StampCard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -467,7 +662,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kazudmb.StampCard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kazudmb.StampCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -476,6 +671,7 @@
 		};
 		AEF0A31624515C3F000664C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B91237397A861A1DF10EFD8 /* Pods-StampCardTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +694,7 @@
 		};
 		AEF0A31724515C3F000664C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24E5611E96B96172936EC141 /* Pods-StampCardTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +717,7 @@
 		};
 		AEF0A31924515C3F000664C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E1C093DA5A9C1547FD53F70 /* Pods-StampCard-StampCardUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,6 +738,7 @@
 		};
 		AEF0A31A24515C3F000664C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 857409F316CC63FBBFA0D423 /* Pods-StampCard-StampCardUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
