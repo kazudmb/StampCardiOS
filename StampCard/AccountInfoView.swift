@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+import Firebase
+
 struct AccountInfoView: View {
     @State var email = "test@gmail.com"
     
@@ -23,6 +25,15 @@ struct AccountInfoView: View {
             Spacer()
         }
         .navigationBarTitle(Text("アカウント情報"), displayMode:.inline)
+    }
+    
+    func Logout(){
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
     }
 }
 
