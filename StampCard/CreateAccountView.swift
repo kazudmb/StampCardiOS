@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+import Firebase
+
 struct CreateAccountView: View {
     
     @State var email = ""
@@ -34,8 +36,21 @@ struct CreateAccountView: View {
                 .background(Color.gray)
                 .cornerRadius(10)
                 .shadow(radius: 5)
+                .gesture(TapGesture(count: 1)
+                    .onEnded(){
+                        self.CreateAccount()
+                })
         }
         .navigationBarTitle(Text("新規登録"), displayMode:.inline)
+    }
+    
+    func CreateAccount() {
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            guard let user = authResult?.user, error == nil else {
+                return
+            }
+            print("\(user.email!) created")
+        }
     }
 }
 
