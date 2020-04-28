@@ -9,8 +9,30 @@
 import SwiftUI
 
 struct ChangePasswordView: View {
+    @State var email = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack{
+            VStack(alignment: .leading){
+                Text("登録時に入力したメールアドレスを入力してください。パスワード再設定の手順を送信します。")
+                    .padding()
+                Text("メールアドレス")
+                    .padding()
+                TextField("メールアドレス", text: $email)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+            Text("送信")
+                .padding()
+                .padding(.leading)
+                .padding(.trailing)
+                .foregroundColor(Color.white)
+                .background(Color.gray)
+                .cornerRadius(10)
+                .shadow(radius: 5)
+        }
+        .navigationBarTitle(Text("パスワードの再設定"), displayMode:.inline)
     }
 }
 

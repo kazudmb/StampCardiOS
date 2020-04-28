@@ -9,8 +9,46 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @State var email = ""
+    @State var password = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            VStack(alignment: .leading){
+                Text("メールアドレス")
+                    .padding()
+                TextField("メールアドレス", text: $email)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                Text("パスワード")
+                    .padding()
+                TextField("パスワード", text: $password)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+            Text("ログイン")
+                .padding()
+                .foregroundColor(Color.white)
+                .background(Color.gray)
+                .cornerRadius(10)
+                .shadow(radius: 5)
+            HStack {
+                NavigationLink(destination:
+                ChangePasswordView()) {
+                    Text("＊パスワードを忘れた方はこちら")
+                }
+                .foregroundColor(Color.black)
+                NavigationLink(destination:
+                CreateAccountView()) {
+                    Text("新規登録")
+                }
+                .foregroundColor(Color.black)
+            }
+            .padding()
+            .padding(.top)
+        }
+        .navigationBarTitle(Text("ログイン"), displayMode:.inline)
     }
 }
 

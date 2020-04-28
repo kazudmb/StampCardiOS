@@ -9,8 +9,20 @@
 import SwiftUI
 
 struct AccountInfoView: View {
+    @State var email = "test@gmail.com"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            VStack(alignment: .leading){
+                Text("メールアドレス")
+                    .padding()
+                Text(email)
+                    .padding()
+            }
+            .padding()
+            Spacer()
+        }
+        .navigationBarTitle(Text("アカウント情報"), displayMode:.inline)
     }
 }
 
