@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+import Firebase
+
 struct LoginView: View {
     
     @State var email = ""
@@ -33,6 +35,10 @@ struct LoginView: View {
                 .background(Color.gray)
                 .cornerRadius(10)
                 .shadow(radius: 5)
+                .gesture(TapGesture(count:1)
+                    .onEnded(){
+                        self.Login()
+                })
             HStack {
                 NavigationLink(destination:
                 ChangePasswordView()) {
@@ -49,6 +55,17 @@ struct LoginView: View {
             .padding(.top)
         }
         .navigationBarTitle(Text("ログイン"), displayMode:.inline)
+    }
+    
+    func Login(){
+        Auth.auth().signIn(withEmail: email, password: password) { [] authResult, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            print(authResult?.user.email)
+            print(authResult?.user.uid)
+        }
     }
 }
 
