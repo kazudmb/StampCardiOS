@@ -10,5 +10,5 @@ import Foundation
 
 import Firebase
 
-var auth: Auth!
+var auth: User?
 var numberOfVisits = 0
