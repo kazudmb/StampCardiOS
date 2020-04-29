@@ -9,13 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    // @Stateを使ってUIの状態と同期をとる
-    @State var labelText = "来店回数："
-    @State var number = 0
-    @State var times = "回"
-    @State var rank = "会員ランク：メンバー"
+    private let numberOfVisitsText = "来店回数："
+    private let times = "回"
     @State private var isShowingSettingModal = false
-    @State var show = false
     
     var body: some View {
         NavigationView {
@@ -24,10 +20,16 @@ struct ContentView: View {
                     VStack{
                         Image("sample")
                         HStack {
-                            Text(labelText)
-                            Text(String(number))
+                            Text(numberOfVisitsText)
+                            Text(String(numberOfVisits))
                             Text(times)
-                            Text(rank)
+                            if numberOfVisits < 20 {
+                                Text("会員ランク：メンバー")
+                            } else if numberOfVisits < 40 {
+                                Text("会員ランク：シルバー")
+                            } else {
+                                Text("会員ランク：ゴールド")
+                            }
                         }
                         .padding()
                         HStack() {
@@ -78,6 +80,7 @@ struct ContentView: View {
                 .navigationBarTitle(Text("Stamp Card"), displayMode:.inline)
                 .navigationBarItems(trailing:
                     NavigationLink(destination:
+//                    if文で分岐、FireBaseのuserがいるかいないか
                     LoginView()) {
                         Image(systemName: "arrowshape.turn.up.right")
                 })
