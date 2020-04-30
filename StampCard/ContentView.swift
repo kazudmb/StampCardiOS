@@ -13,6 +13,7 @@ struct ContentView: View {
     private let times = "回"
     @State private var isShowingSettingModal = false
     @State private var isShowLoginView = false
+    @State private var isShowAccountInfoView = false
     
     var body: some View {
         NavigationView {
@@ -88,7 +89,9 @@ struct ContentView: View {
                                 Image(systemName: "arrowshape.turn.up.right")
                             }
                         } else {
-                            NavigationLink(destination:AccountInfoView()) {
+                            Button(action: {
+                                self.isShowAccountInfoView.toggle()
+                            }) {
                                 Image(systemName: "person.crop.circle")
                             }
                         }
@@ -96,6 +99,9 @@ struct ContentView: View {
                 )
                     .foregroundColor(Color.black)
                 NavigationLink(destination: LoginView(isShowLoginView: $isShowLoginView), isActive: $isShowLoginView) {
+                    EmptyView()
+                }
+                NavigationLink(destination: AccountInfoView(isShowAccountInfoView: $isShowAccountInfoView), isActive: $isShowAccountInfoView) {
                     EmptyView()
                 }
             }

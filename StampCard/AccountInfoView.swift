@@ -11,7 +11,9 @@ import SwiftUI
 import Firebase
 
 struct AccountInfoView: View {
+    
     @State var email = "test@gmail.com"
+    @Binding var isShowAccountInfoView: Bool
     
     var body: some View {
         HStack {
@@ -25,20 +27,29 @@ struct AccountInfoView: View {
             Spacer()
         }
         .navigationBarTitle(Text("アカウント情報"), displayMode:.inline)
+        .navigationBarItems(trailing:
+            Button(action: {
+                self.Logout()
+            }) {
+                Text("ログアウト")
+        })
     }
     
     func Logout(){
         let firebaseAuth = Auth.auth()
         do {
-          try firebaseAuth.signOut()
+            try firebaseAuth.signOut()
+            firebaseUser = nil
+            numberOfVisits = 0
+            self.isShowAccountInfoView.toggle()
         } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
+            print ("Error signing out: %@", signOutError)
         }
     }
 }
 
 struct AccountInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountInfoView()
+        EmptyView()
     }
 }
