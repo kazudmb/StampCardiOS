@@ -12,6 +12,7 @@ struct ContentView: View {
     private let numberOfVisitsText = "来店回数："
     private let times = "回"
     @State private var isShowingSettingModal = false
+    @State private var isShowLoginView = false
     
     var body: some View {
         NavigationView {
@@ -79,12 +80,24 @@ struct ContentView: View {
                 }
                 .navigationBarTitle(Text("Stamp Card"), displayMode:.inline)
                 .navigationBarItems(trailing:
-                    NavigationLink(destination:
-//                    if文で分岐、FireBaseのuserがいるかいないか
-                    LoginView()) {
-                        Image(systemName: "arrowshape.turn.up.right")
-                })
+                    HStack {
+                        if firebaseUser == nil {
+                            Button(action: {
+                                self.isShowLoginView.toggle()
+                            }) {
+                                Image(systemName: "arrowshape.turn.up.right")
+                            }
+                        } else {
+                            NavigationLink(destination:AccountInfoView()) {
+                                Image(systemName: "person.crop.circle")
+                            }
+                        }
+                    }
+                )
                     .foregroundColor(Color.black)
+                NavigationLink(destination: LoginView(isShowLoginView: $isShowLoginView), isActive: $isShowLoginView) {
+                    EmptyView()
+                }
             }
         }
     }

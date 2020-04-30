@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		46056589AA269B18CB66F331 /* Pods_StampCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D030574BF9D205D0E544723 /* Pods_StampCard.framework */; };
 		557CD643D4E0B429FEE5BA35 /* Pods_StampCardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E7724EE3EA69278448D0D0A /* Pods_StampCardTests.framework */; };
 		AE69AF2D2458202500CB297B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE69AF2C2458202500CB297B /* GoogleService-Info.plist */; };
+		AE69AF2F2458F85A00CB297B /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69AF2E2458F85900CB297B /* DataRepository.swift */; };
 		AEF0A2E924515C3B000664C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A2E824515C3B000664C4 /* AppDelegate.swift */; };
 		AEF0A2EB24515C3B000664C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A2EA24515C3B000664C4 /* SceneDelegate.swift */; };
 		AEF0A2EE24515C3B000664C4 /* StampCard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A2EC24515C3B000664C4 /* StampCard.xcdatamodeld */; };
@@ -59,6 +60,7 @@
 		7B91237397A861A1DF10EFD8 /* Pods-StampCardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StampCardTests.debug.xcconfig"; path = "Target Support Files/Pods-StampCardTests/Pods-StampCardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		857409F316CC63FBBFA0D423 /* Pods-StampCard-StampCardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StampCard-StampCardUITests.release.xcconfig"; path = "Target Support Files/Pods-StampCard-StampCardUITests/Pods-StampCard-StampCardUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AE69AF2C2458202500CB297B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AE69AF2E2458F85900CB297B /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
 		AEF0A2E524515C3B000664C4 /* StampCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StampCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF0A2E824515C3B000664C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEF0A2EA24515C3B000664C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				AEF0A323245288AD000664C4 /* ChangePasswordView.swift */,
 				AEF0A3272452C91D000664C4 /* ChangeEmailView.swift */,
 				AEF0A325245289A8000664C4 /* AccountInfoView.swift */,
+				AE69AF2E2458F85900CB297B /* DataRepository.swift */,
 				AEF0A32124528783000664C4 /* CreateAccountView.swift */,
 				AEF0A2F124515C3E000664C4 /* Assets.xcassets */,
 				AEF0A2F624515C3E000664C4 /* LaunchScreen.storyboard */,
@@ -209,7 +212,6 @@
 				7B91237397A861A1DF10EFD8 /* Pods-StampCardTests.debug.xcconfig */,
 				24E5611E96B96172936EC141 /* Pods-StampCardTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -459,6 +461,7 @@
 				AEF0A3282452C91D000664C4 /* ChangeEmailView.swift in Sources */,
 				AEF0A32E2452CF0A000664C4 /* SideMenuView.swift in Sources */,
 				AEF0A2EE24515C3B000664C4 /* StampCard.xcdatamodeld in Sources */,
+				AE69AF2F2458F85A00CB297B /* DataRepository.swift in Sources */,
 				AEF0A2E924515C3B000664C4 /* AppDelegate.swift in Sources */,
 				AEF0A32224528783000664C4 /* CreateAccountView.swift in Sources */,
 				AEF0A32A2452CE78000664C4 /* MenuRow.swift in Sources */,

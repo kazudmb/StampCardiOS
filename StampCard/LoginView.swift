@@ -14,6 +14,7 @@ struct LoginView: View {
     
     @State var email = ""
     @State var password = ""
+    @Binding var isShowLoginView: Bool
     
     var body: some View {
         VStack{
@@ -29,16 +30,16 @@ struct LoginView: View {
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
-            Text("ログイン")
-                .padding()
-                .foregroundColor(Color.white)
-                .background(Color.gray)
-                .cornerRadius(10)
-                .shadow(radius: 5)
-                .gesture(TapGesture(count:1)
-                    .onEnded(){
-                        self.Login()
-                })
+            Button(action: {
+                self.Login()
+            }){
+                Text("ログイン")
+                    .padding()
+                    .foregroundColor(Color.white)
+                    .background(Color.gray)
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+            }
             HStack {
                 NavigationLink(destination:
                 ChangePasswordView()) {
@@ -63,14 +64,16 @@ struct LoginView: View {
                 print(error.localizedDescription)
                 return
             }
-            print(authResult?.user.email)
-            print(authResult?.user.uid)
+            firebaseUser = authResult?.user
+            print(authResult?.user.email as Any)
+            print(authResult?.user.uid as Any)
+            self.isShowLoginView.toggle()
         }
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        EmptyView()
     }
 }
