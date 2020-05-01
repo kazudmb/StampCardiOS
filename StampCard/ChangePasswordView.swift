@@ -53,9 +53,9 @@ struct ChangePasswordView: View {
         
         if self.email == "" {
             self.isInvalidEmail = true
+            valid = false
         } else {
             self.isInvalidEmail = false
-            valid = false
         }
         
         return valid

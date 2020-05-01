@@ -58,16 +58,16 @@ struct ChangeEmailView: View {
         
         if self.email == "" {
             self.isInvalidEmail = true
+            valid = false
         } else {
             self.isInvalidEmail = false
-            valid = false
         }
         
         if self.password == "" {
             self.isInvalidPassword = true
+            valid = false
         } else {
             self.isInvalidPassword = false
-            valid = false
         }
         
         return valid
