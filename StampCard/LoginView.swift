@@ -14,6 +14,8 @@ struct LoginView: View {
     
     @State var email = ""
     @State var password = ""
+    @State var isShowCreateAccountView = false
+    @State var isShowChangePasswordView = false
     @Binding var isShowLoginView: Bool
     
     var body: some View {
@@ -41,21 +43,31 @@ struct LoginView: View {
                     .shadow(radius: 5)
             }
             HStack {
-                NavigationLink(destination:
-                ChangePasswordView()) {
+                Button(action: {
+                    self.isShowChangePasswordView.toggle()
+                }){
                     Text("＊パスワードを忘れた方はこちら")
+                        .foregroundColor(Color.black)
                 }
-                .foregroundColor(Color.black)
-                NavigationLink(destination:
-                CreateAccountView()) {
+                Button(action: {
+                    self.isShowCreateAccountView.toggle()
+                }){
                     Text("新規登録")
+                        .foregroundColor(Color.black)
                 }
-                .foregroundColor(Color.black)
             }
             .padding()
             .padding(.top)
+            .navigationBarTitle(Text("ログイン"), displayMode:.inline)
+            NavigationLink(destination: ChangePasswordView(isShowLoginView: $isShowLoginView), isActive: $isShowChangePasswordView) {
+                EmptyView()
+            }
+            .isDetailLink(false)
+            NavigationLink(destination: CreateAccountView(isShowLoginView: $isShowLoginView), isActive: $isShowCreateAccountView) {
+                EmptyView()
+            }
+            .isDetailLink(false)
         }
-        .navigationBarTitle(Text("ログイン"), displayMode:.inline)
     }
     
     func Login(){

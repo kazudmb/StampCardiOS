@@ -9,7 +9,9 @@
 import SwiftUI
 
 struct ChangePasswordView: View {
+    
     @State var email = ""
+    @Binding var isShowLoginView: Bool
     
     var body: some View {
         
@@ -23,7 +25,10 @@ struct ChangePasswordView: View {
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
-            Text("送信")
+            Button(action: {
+                self.isShowLoginView.toggle()
+            }){
+                Text("送信")
                 .padding()
                 .padding(.leading)
                 .padding(.trailing)
@@ -31,6 +36,7 @@ struct ChangePasswordView: View {
                 .background(Color.gray)
                 .cornerRadius(10)
                 .shadow(radius: 5)
+            }
         }
         .navigationBarTitle(Text("パスワードの再設定"), displayMode:.inline)
     }
@@ -38,6 +44,6 @@ struct ChangePasswordView: View {
 
 struct ChangePasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        ChangePasswordView()
+        EmptyView()
     }
 }
