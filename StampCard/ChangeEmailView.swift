@@ -11,6 +11,8 @@ import SwiftUI
 struct ChangeEmailView: View {
     @State var email = ""
     @State var password = ""
+    @State private var isInvalidEmail = false
+    @State private var isInvalidPassword = false
     
     var body: some View {
         
@@ -18,14 +20,26 @@ struct ChangeEmailView: View {
             VStack(alignment: .leading){
                 Text("メールアドレス")
                     .padding()
-                TextField("メールアドレス", text: $email)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                HStack {
+                    TextField("メールアドレス", text: $email)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    if isInvalidEmail {
+                        Text("入力してください")
+                            .foregroundColor(.red)
+                    }
+                }
+                .padding()
                 Text("パスワード")
                     .padding()
-                TextField("パスワード", text: $password)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                HStack {
+                    TextField("パスワード", text: $password)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    if isInvalidPassword {
+                        Text("入力してください")
+                            .foregroundColor(.red)
+                    }
+                }
+                .padding()
             }
             Text("送信")
                 .padding()
@@ -37,6 +51,26 @@ struct ChangeEmailView: View {
                 .shadow(radius: 5)
         }
         .navigationBarTitle(Text("メールアドレス変更"), displayMode:.inline)
+    }
+    
+    func validateForm() -> Bool {
+        var valid = true
+        
+        if self.email == "" {
+            self.isInvalidEmail = true
+        } else {
+            self.isInvalidEmail = false
+            valid = false
+        }
+        
+        if self.password == "" {
+            self.isInvalidPassword = true
+        } else {
+            self.isInvalidPassword = false
+            valid = false
+        }
+        
+        return valid
     }
 }
 

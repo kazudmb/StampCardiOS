@@ -14,6 +14,8 @@ struct LoginView: View {
     
     @State var email = ""
     @State var password = ""
+    @State private var isInvalidEmail = false
+    @State private var isInvalidPassword = false
     @State var isShowCreateAccountView = false
     @State var isShowChangePasswordView = false
     @Binding var isShowLoginView: Bool
@@ -21,13 +23,25 @@ struct LoginView: View {
     var body: some View {
         VStack{
             VStack(alignment: .leading){
-                Text("メールアドレス")
-                    .padding()
+                HStack {
+                    Text("メールアドレス")
+                    if isInvalidEmail {
+                        Text("入力してください")
+                            .foregroundColor(.red)
+                    }
+                }
+                .padding()
                 TextField("メールアドレス", text: $email)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                Text("パスワード")
-                    .padding()
+                HStack {
+                    Text("パスワード")
+                    if isInvalidPassword {
+                        Text("入力してください")
+                            .foregroundColor(.red)
+                    }
+                }
+                .padding()
                 TextField("パスワード", text: $password)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -71,16 +85,38 @@ struct LoginView: View {
     }
     
     func Login(){
-        Auth.auth().signIn(withEmail: email, password: password) { [] authResult, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
+        if validateForm() {
+            Auth.auth().signIn(withEmail: email, password: password) { [] authResult, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                firebaseUser = authResult?.user
+                print(authResult?.user.email as Any)
+                print(authResult?.user.uid as Any)
+                self.isShowLoginView.toggle()
             }
-            firebaseUser = authResult?.user
-            print(authResult?.user.email as Any)
-            print(authResult?.user.uid as Any)
-            self.isShowLoginView.toggle()
         }
+    }
+    
+    func validateForm() -> Bool {
+        var valid = true
+        
+        if self.email == "" {
+            self.isInvalidEmail = true
+        } else {
+            self.isInvalidEmail = false
+            valid = false
+        }
+        
+        if self.password == "" {
+            self.isInvalidPassword = true
+        } else {
+            self.isInvalidPassword = false
+            valid = false
+        }
+        
+        return valid
     }
 }
 
