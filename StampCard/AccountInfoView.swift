@@ -12,7 +12,6 @@ import Firebase
 
 struct AccountInfoView: View {
     
-    @State var email = "test@gmail.com"
     @State private var isShowAlert = false
     @State private var isShowActionSheet = false
     @State private var isShowChangeEmailView = false
@@ -45,8 +44,13 @@ struct AccountInfoView: View {
                 VStack(alignment: .leading){
                     Text("メールアドレス")
                         .padding()
-                    Text(email)
-                        .padding()
+                    if firebaseUser?.email != nil {
+                        Text((firebaseUser?.email)!)
+                            .padding()
+                    } else {
+                        Text("")
+                            .padding()
+                    }
                 }
                 .padding()
                 Spacer()
