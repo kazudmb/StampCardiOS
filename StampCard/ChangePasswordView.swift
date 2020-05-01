@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+import Firebase
+
 struct ChangePasswordView: View {
     
     @State var email = ""
@@ -33,7 +35,7 @@ struct ChangePasswordView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
             Button(action: {
-                self.isShowChangePasswordView.toggle()
+                self.sendPasswordResetEmail()
             }){
                 Text("送信")
                     .padding()
@@ -46,6 +48,18 @@ struct ChangePasswordView: View {
             }
         }
         .navigationBarTitle(Text("パスワードの再設定"), displayMode:.inline)
+    }
+    
+    private func sendPasswordResetEmail() {
+        if validateForm() {
+            Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+                if error == nil {
+                    self.isShowChangePasswordView.toggle()
+                }else{
+                    print("error:\(String(describing: error?.localizedDescription))")
+                }
+            }
+        }
     }
     
     func validateForm() -> Bool {
