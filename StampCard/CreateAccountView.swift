@@ -22,28 +22,28 @@ struct CreateAccountView: View {
         
         VStack{
             VStack(alignment: .leading){
-                Text("メールアドレス")
-                    .padding()
                 HStack {
-                    TextField("メールアドレス", text: $email)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    Text("メールアドレス")
                     if isInvalidEmail {
                         Text("入力してください")
                             .foregroundColor(.red)
                     }
                 }
                 .padding()
-                Text("パスワード")
+                TextField("メールアドレス", text: $email)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 HStack {
-                    TextField("パスワード", text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    Text("パスワード")
                     if isInvalidPassword {
                         Text("入力してください")
                             .foregroundColor(.red)
                     }
                 }
                 .padding()
+                TextField("パスワード", text: $password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
             }
             Button(action:{
                 self.CreateAccount()
