@@ -12,7 +12,7 @@ struct ChangePasswordView: View {
     
     @State var email = ""
     @State private var isInvalidEmail = false
-    @Binding var isShowLoginView: Bool
+    @Binding var isShowChangePasswordView: Bool
     
     var body: some View {
         
@@ -33,7 +33,7 @@ struct ChangePasswordView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
             Button(action: {
-                self.isShowLoginView.toggle()
+                self.isShowChangePasswordView.toggle()
             }){
                 Text("送信")
                     .padding()

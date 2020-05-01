@@ -15,12 +15,14 @@ struct AccountInfoView: View {
     @State var email = "test@gmail.com"
     @State private var isShowAlert = false
     @State private var isShowActionSheet = false
+    @State private var isShowChangeEmailView = false
+    @State private var isShowChangePasswordView = false
     @Binding var isShowAccountInfoView: Bool
     
     var actionSheet: ActionSheet {
         ActionSheet(title: Text("選択してください"),buttons: [
-            .default(Text("メールアドレス変更"),action: {}),
-            .default(Text("パスワード変更"),action: {}),
+            .default(Text("メールアドレス変更"),action: {self.isShowChangeEmailView.toggle()}),
+            .default(Text("パスワード変更"),action: {self.isShowChangePasswordView.toggle()}),
             .destructive(Text("ログアウト"),action: {self.isShowAlert.toggle()}),
             .cancel()
         ])
@@ -38,27 +40,35 @@ struct AccountInfoView: View {
     }
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading){
-                Text("メールアドレス")
-                    .padding()
-                Text(email)
-                    .padding()
+        ZStack {
+            HStack {
+                VStack(alignment: .leading){
+                    Text("メールアドレス")
+                        .padding()
+                    Text(email)
+                        .padding()
+                }
+                .padding()
+                Spacer()
             }
-            .padding()
-            Spacer()
+            .navigationBarTitle(Text("アカウント情報"), displayMode:.inline)
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.isShowActionSheet.toggle()
+                }) {
+                    Image(systemName: "ellipsis.circle")
+                }
+                .actionSheet(isPresented: $isShowActionSheet, content: {self.actionSheet})
+                .alert(isPresented: $isShowAlert, content: {self.alert})
+            )
+                .foregroundColor(Color.black)
+            NavigationLink(destination: ChangeEmailView(isShowChangeEmailView: $isShowChangeEmailView), isActive: $isShowChangeEmailView) {
+                EmptyView()
+            }
+            NavigationLink(destination: ChangePasswordView(isShowChangePasswordView: $isShowChangePasswordView), isActive: $isShowChangePasswordView) {
+                EmptyView()
+            }
         }
-        .navigationBarTitle(Text("アカウント情報"), displayMode:.inline)
-        .navigationBarItems(trailing:
-            Button(action: {
-                self.isShowActionSheet.toggle()
-            }) {
-                Image(systemName: "ellipsis.circle")
-            }
-            .actionSheet(isPresented: $isShowActionSheet, content: {self.actionSheet})
-            .alert(isPresented: $isShowAlert, content: {self.alert})
-        )
-            .foregroundColor(Color.black)
     }
     
     func Logout(){

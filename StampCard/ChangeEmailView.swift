@@ -13,6 +13,7 @@ struct ChangeEmailView: View {
     @State var password = ""
     @State private var isInvalidEmail = false
     @State private var isInvalidPassword = false
+    @Binding var isShowChangeEmailView: Bool
     
     var body: some View {
         
@@ -41,14 +42,18 @@ struct ChangeEmailView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
             }
-            Text("送信")
-                .padding()
-                .padding(.leading)
-                .padding(.trailing)
-                .foregroundColor(Color.white)
-                .background(Color.gray)
-                .cornerRadius(10)
-                .shadow(radius: 5)
+            Button(action: {
+                self.isShowChangeEmailView.toggle()
+            }){
+                Text("送信")
+                    .padding()
+                    .padding(.leading)
+                    .padding(.trailing)
+                    .foregroundColor(Color.white)
+                    .background(Color.gray)
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+            }
         }
         .navigationBarTitle(Text("メールアドレス変更"), displayMode:.inline)
     }
@@ -76,6 +81,6 @@ struct ChangeEmailView: View {
 
 struct ChangeEmailView_Previews: PreviewProvider {
     static var previews: some View {
-        ChangeEmailView()
+        EmptyView()
     }
 }

@@ -73,7 +73,7 @@ struct LoginView: View {
             .padding()
             .padding(.top)
             .navigationBarTitle(Text("ログイン"), displayMode:.inline)
-            NavigationLink(destination: ChangePasswordView(isShowLoginView: $isShowLoginView), isActive: $isShowChangePasswordView) {
+            NavigationLink(destination: ChangePasswordView(isShowChangePasswordView: $isShowChangePasswordView), isActive: $isShowChangePasswordView) {
                 EmptyView()
             }
             .isDetailLink(false)
