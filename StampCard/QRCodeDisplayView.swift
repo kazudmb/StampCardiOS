@@ -23,8 +23,7 @@ struct QRCodeDisplayView: View {
 
 struct makeQRCode: View {
     var body: some View {
-        let urlText = "https://xxxxxx.com"
-        let img = UIImage.makeQRCode(text: urlText)!
+        let img = UIImage.makeQRCode(text: "\(String(firebaseUser?.uid ?? ""))")!
         return Image(uiImage: img)
     }
 }
