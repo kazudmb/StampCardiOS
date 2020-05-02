@@ -59,17 +59,48 @@ struct CreateAccountView: View {
         .navigationBarTitle(Text("新規登録"), displayMode:.inline)
     }
     
-    func CreateAccount() {
+    private func CreateAccount() {
         if validateForm() {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 guard let user = authResult?.user, error == nil else {
                     return
                 }
                 firebaseUser = user
-                self.isShowLoginView.toggle()
+                self.createCollection()
                 print("\(user.email!) created")
             }
         }
+    }
+    
+    private func createCollection() {
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        let db = Firestore.firestore()
+        let user = [
+            "NumberOfVisits": 0
+        ]
+        
+        db.collection("users").document("\(String(firebaseUser?.uid ?? ""))").setData(user) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                numberOfVisits = 0
+                self.sendEmailVerification()
+                self.isShowLoginView.toggle()
+                print("Document successfully written!")
+            }
+        }
+    }
+    
+    private func sendEmailVerification() {
+        
+        firebaseUser?.sendEmailVerification(completion: { (error) in
+            if error != nil {
+                print("error:\(String(describing: error?.localizedDescription))")
+            } else {
+                print("success:no message)")
+            }
+        })
     }
     
     func validateForm() -> Bool {
