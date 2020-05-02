@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+import Firebase
+
 struct ChangeEmailView: View {
     @State var email = ""
     @State var password = ""
@@ -43,7 +45,7 @@ struct ChangeEmailView: View {
                     .padding()
             }
             Button(action: {
-                self.isShowChangeEmailView.toggle()
+                self.reauthenticate()
             }){
                 Text("送信")
                     .padding()
@@ -56,6 +58,43 @@ struct ChangeEmailView: View {
             }
         }
         .navigationBarTitle(Text("メールアドレス変更"), displayMode:.inline)
+    }
+    
+    private func reauthenticate(){
+        
+        let credential: AuthCredential = EmailAuthProvider.credential(withEmail: "\(String(firebaseUser?.email ?? ""))", password: password)
+        firebaseUser?.reauthenticate(with: credential, completion: { (result: AuthDataResult?, error: Error?) in
+            if error != nil {
+                print("error:\(String(describing: error?.localizedDescription))")
+            } else {
+                self.updateEmail()
+                print("success:\(String(describing: result?.credential.debugDescription))")
+            }
+        })
+    }
+    
+    private func updateEmail() {
+        
+        firebaseUser?.updateEmail(to: email) { error in
+            if error != nil {
+                print("error:\(String(describing: error?.localizedDescription))")
+            } else {
+                self.sendEmailVerification()
+                self.isShowChangeEmailView.toggle()
+                print("success:no message)")
+            }
+        }
+    }
+    
+    private func sendEmailVerification() {
+        
+        firebaseUser?.sendEmailVerification(completion: { (error) in
+            if error != nil {
+                print("error:\(String(describing: error?.localizedDescription))")
+            } else {
+                print("success:no message)")
+            }
+        })
     }
     
     func validateForm() -> Bool {
