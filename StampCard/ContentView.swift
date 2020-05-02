@@ -34,29 +34,33 @@ struct ContentView: View {
                             }
                         }
                         .padding()
-                        HStack() {
-                            Image("logo_stamp_area_icon")
-                                .border(Color.orange, width: 2)
-                            Image("logo_stamp_area_icon")
-                                .border(Color.orange, width: 2)
-                            Image("logo_stamp_area_icon")
-                                .border(Color.orange, width: 2)
-                            Image("logo_stamp_area_icon")
-                                .border(Color.orange, width: 2)
-                            Image("logo_stamp_area_icon")
-                                .border(Color.orange, width: 2)
+                        ZStack {
+                            HStack {
+                                ForEach(0..<5) { _ in
+                                    Image("logo_stamp_area_icon")
+                                        .border(Color.orange, width: 2)
+                                }
+                            }
+                            HStack {
+                                ForEach(0..<getNumberOfStamp()[0]) { _ in
+                                    Image("logo_approved")
+                                        .border(Color.orange, width: 2)
+                                }
+                            }
                         }
-                        HStack() {
-                            Image("logo_stamp_area_icon")
-                                .border(Color.orange, width: 2)
-                            Image("logo_stamp_area_icon")
-                                .border(Color.orange, width: 2)
-                            Image("logo_stamp_area_icon")
-                                .border(Color.orange, width: 2)
-                            Image("logo_stamp_area_icon")
-                                .border(Color.orange, width: 2)
-                            Image("logo_stamp_area_icon")
-                                .border(Color.orange, width: 2)
+                        ZStack {
+                            HStack {
+                                ForEach(0..<5) { _ in
+                                    Image("logo_stamp_area_icon")
+                                        .border(Color.orange, width: 2)
+                                }
+                            }
+                            HStack {
+                                ForEach(0..<getNumberOfStamp()[1]) { _ in
+                                    Image("logo_approved")
+                                        .border(Color.orange, width: 2)
+                                }
+                            }
                         }
                         Text("特典内容：スタンプカードが40ポイント貯まると、シャンパン1本をサービス致します！")
                             .padding()
@@ -108,6 +112,29 @@ struct ContentView: View {
         }
     }
     
+    private func getNumberOfStamp() -> [Int] {
+        
+        var numberOfStamp: [Int] = []
+        let numberOfVisitsString: String = String(numberOfVisits)
+        let numberOfCutOut = Int(numberOfVisitsString.prefix(numberOfVisitsString.count - 1))
+        
+        if (numberOfCutOut == 0 && Int(numberOfVisitsString) ?? 0 < 10) {
+            // do nothing
+            return [0,0]
+        } else {
+            if numberOfCutOut == 0 {
+                numberOfStamp = [5,5]
+            } else {
+                if numberOfCutOut ?? 0 < 5 {
+                    numberOfStamp = [Int(numberOfCutOut ?? 0), 0]
+                } else {
+                    numberOfStamp = [5, Int(numberOfCutOut ?? 0 - 5)]
+                }
+            }
+        }
+        
+        return numberOfStamp
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
