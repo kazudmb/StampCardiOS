@@ -25,6 +25,7 @@ struct LoginView: View {
             VStack(alignment: .leading){
                 HStack {
                     Text("メールアドレス")
+                        .foregroundColor(Color.primary)
                     if isInvalidEmail {
                         Text("入力してください")
                             .foregroundColor(.red)
@@ -36,6 +37,7 @@ struct LoginView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 HStack {
                     Text("パスワード")
+                        .foregroundColor(Color.primary)
                     if isInvalidPassword {
                         Text("入力してください")
                             .foregroundColor(.red)
@@ -61,13 +63,13 @@ struct LoginView: View {
                     self.isShowChangePasswordView.toggle()
                 }){
                     Text("＊パスワードを忘れた方はこちら")
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.primary)
                 }
                 Button(action: {
                     self.isShowCreateAccountView.toggle()
                 }){
                     Text("新規登録")
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.primary)
                 }
             }
             .padding()

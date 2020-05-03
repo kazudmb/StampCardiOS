@@ -28,14 +28,20 @@ struct ContentView: View {
                         Image("sample")
                         HStack {
                             Text(numberOfVisitsText)
+                                .foregroundColor(Color.primary)
                             Text(String(self.numberOfVisits))
+                                .foregroundColor(Color.primary)
                             Text(times)
+                                .foregroundColor(Color.primary)
                             if self.numberOfVisits < 40 {
                                 Text("会員ランク：メンバー")
+                                    .foregroundColor(Color.primary)
                             } else if self.numberOfVisits < 80 {
                                 Text("会員ランク：シルバー")
+                                    .foregroundColor(Color.primary)
                             } else {
                                 Text("会員ランク：ゴールド")
+                                    .foregroundColor(Color.primary)
                             }
                         }
                         .padding(.top, 8)
@@ -157,6 +163,7 @@ struct ContentView: View {
                         }
                         
                         Text("特典内容：スタンプカードが40ポイント貯まると、シャンパン1本をサービス致します！")
+                            .foregroundColor(Color.primary)
                             .padding()
                             .padding(.leading)
                             .padding(.trailing)
@@ -204,7 +211,7 @@ struct ContentView: View {
                         }
                     }
                 )
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color.primary)
                 NavigationLink(destination: LoginView(isShowLoginView: $isShowLoginView), isActive: $isShowLoginView) {
                     EmptyView()
                 }

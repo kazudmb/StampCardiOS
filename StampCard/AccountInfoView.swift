@@ -43,12 +43,15 @@ struct AccountInfoView: View {
             HStack {
                 VStack(alignment: .leading){
                     Text("メールアドレス")
+                        .foregroundColor(Color.primary)
                         .padding()
                     if firebaseUser?.email != nil {
                         Text((firebaseUser?.email)!)
+                            .foregroundColor(Color.primary)
                             .padding()
                     } else {
                         Text("")
+                            .foregroundColor(Color.primary)
                             .padding()
                     }
                 }
@@ -65,7 +68,7 @@ struct AccountInfoView: View {
                 .actionSheet(isPresented: $isShowActionSheet, content: {self.actionSheet})
                 .alert(isPresented: $isShowAlert, content: {self.alert})
             )
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.primary)
             NavigationLink(destination: ChangeEmailView(isShowChangeEmailView: $isShowChangeEmailView), isActive: $isShowChangeEmailView) {
                 EmptyView()
             }

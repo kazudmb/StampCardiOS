@@ -15,6 +15,7 @@ struct QRCodeDisplayView: View {
             makeQRCode()
                 .padding()
             Text("このQRコードを提示して下さい")
+                .foregroundColor(Color.primary)
                 .padding()
         }
         .navigationBarTitle(Text("読み取り用QRコード"), displayMode:.inline)

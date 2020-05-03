@@ -23,6 +23,7 @@ struct ChangeEmailView: View {
             VStack(alignment: .leading){
                 HStack {
                     Text("メールアドレス")
+                        .foregroundColor(Color.primary)
                     if isInvalidEmail {
                         Text("入力してください")
                             .foregroundColor(.red)
@@ -34,6 +35,7 @@ struct ChangeEmailView: View {
                     .padding()
                 HStack {
                     Text("パスワード")
+                        .foregroundColor(Color.primary)
                     if isInvalidPassword {
                         Text("入力してください")
                             .foregroundColor(.red)

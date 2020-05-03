@@ -21,9 +21,11 @@ struct ChangePasswordView: View {
         VStack{
             VStack(alignment: .leading){
                 Text("登録時に入力したメールアドレスを入力してください。パスワード再設定の手順を送信します。")
+                    .foregroundColor(Color.primary)
                     .padding()
                 HStack {
                     Text("メールアドレス")
+                        .foregroundColor(Color.primary)
                     if isInvalidEmail {
                         Text("入力してください")
                             .foregroundColor(.red)
