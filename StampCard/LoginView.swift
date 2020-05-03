@@ -42,7 +42,7 @@ struct LoginView: View {
                     }
                 }
                 .padding()
-                TextField("パスワード", text: $password)
+                SecureField("パスワード", text: $password)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
