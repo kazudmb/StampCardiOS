@@ -37,7 +37,8 @@ struct ContentView: View {
                                 Text("会員ランク：ゴールド")
                             }
                         }
-                        .padding()
+                        .padding(.top, 8)
+                        .padding(.bottom, 8)
                         HStack {
                             if numberOfStampArea[0] {
                                 ZStack {
@@ -156,6 +157,8 @@ struct ContentView: View {
                         
                         Text("特典内容：スタンプカードが40ポイント貯まると、シャンパン1本をサービス致します！")
                             .padding()
+                            .padding(.leading)
+                            .padding(.trailing)
                             .padding(.bottom)
                             .lineLimit(nil)
                         
@@ -182,13 +185,13 @@ struct ContentView: View {
                             Button(action: {
                                 self.isShowLoginView.toggle()
                             }) {
-                                Image(systemName: "arrowshape.turn.up.right")
+                                Image(systemName: "arrowshape.turn.up.right").imageScale(.large)
                             }
                         } else {
                             Button(action: {
                                 self.isShowAccountInfoView.toggle()
                             }) {
-                                Image(systemName: "person.crop.circle")
+                                Image(systemName: "person.crop.circle").imageScale(.large)
                             }
                         }
                     }

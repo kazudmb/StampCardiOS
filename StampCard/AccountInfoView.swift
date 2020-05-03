@@ -60,7 +60,7 @@ struct AccountInfoView: View {
                 Button(action: {
                     self.isShowActionSheet.toggle()
                 }) {
-                    Image(systemName: "ellipsis.circle")
+                    Image(systemName: "ellipsis.circle").imageScale(.large)
                 }
                 .actionSheet(isPresented: $isShowActionSheet, content: {self.actionSheet})
                 .alert(isPresented: $isShowAlert, content: {self.alert})
