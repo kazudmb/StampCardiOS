@@ -15,6 +15,7 @@ struct ContentView: View {
     private let times = "回"
     @State private var numberOfVisits = 0
     @State private var numberOfStampArea :[Bool] = [false, false, false, false, false, false, false, false, false, false]
+    @State private var isShowAlert = false
     @State private var isShowingSettingModal = false
     @State private var isShowLoginView = false
     @State private var isShowAccountInfoView = false
@@ -163,7 +164,11 @@ struct ContentView: View {
                             .lineLimit(nil)
                         
                         Button(action: {
-                            self.isShowingSettingModal.toggle()
+                            if firebaseUser == nil {
+                                self.isShowAlert.toggle()
+                            } else {
+                                self.isShowingSettingModal.toggle()
+                            }
                         }){
                             Text("スタンプを押してもらう")
                                 .padding()
@@ -174,6 +179,9 @@ struct ContentView: View {
                         }
                         .sheet(isPresented: self.$isShowingSettingModal) {
                             QRCodeDisplayView()
+                        }
+                        .alert(isPresented: $isShowAlert) {
+                            Alert(title: Text("ログインしてください"))
                         }
                     }
                     Spacer()
