@@ -80,7 +80,7 @@ struct AccountInfoView: View {
         do {
             try firebaseAuth.signOut()
             firebaseUser = nil
-            numberOfVisits = 0
+            numberOfVisitsGlobal = 0
             self.isShowAccountInfoView.toggle()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
