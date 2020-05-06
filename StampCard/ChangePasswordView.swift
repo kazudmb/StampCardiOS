@@ -19,36 +19,43 @@ struct ChangePasswordView: View {
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false) {
-            VStack{
-                VStack(alignment: .leading){
-                    Text("登録時に入力したメールアドレスを入力してください。パスワード再設定の手順を送信します。")
-                        .foregroundColor(Color.primary)
-                        .padding()
-                        .padding(.top)
-                    HStack {
-                        Text("メールアドレス")
-                            .foregroundColor(Color.primary)
-                        if isInvalidEmail {
-                            Text("入力してください")
-                                .foregroundColor(.red)
-                        }
-                    }
-                    .padding()
-                    TextField("メールアドレス", text: $email)
-                        .padding()
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+            ZStack {
+            Color.white
+                .edgesIgnoringSafeArea(.all)
+                .onTapGesture {
+                    UIApplication.shared.closeKeyboard()
                 }
-                Button(action: {
-                    self.sendPasswordResetEmail()
-                }){
-                    Text("送信")
+                VStack{
+                    VStack(alignment: .leading){
+                        Text("登録時に入力したメールアドレスを入力してください。パスワード再設定の手順を送信します。")
+                            .foregroundColor(Color.primary)
+                            .padding()
+                            .padding(.top)
+                        HStack {
+                            Text("メールアドレス")
+                                .foregroundColor(Color.primary)
+                            if isInvalidEmail {
+                                Text("入力してください")
+                                    .foregroundColor(.red)
+                            }
+                        }
                         .padding()
-                        .padding(.leading)
-                        .padding(.trailing)
-                        .foregroundColor(Color.white)
-                        .background(Color.gray)
-                        .cornerRadius(10)
-                        .shadow(radius: 5)
+                        TextField("メールアドレス", text: $email)
+                            .padding()
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                    }
+                    Button(action: {
+                        self.sendPasswordResetEmail()
+                    }){
+                        Text("送信")
+                            .padding()
+                            .padding(.leading)
+                            .padding(.trailing)
+                            .foregroundColor(Color.white)
+                            .background(Color.gray)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                    }
                 }
             }
             .navigationBarTitle(Text("パスワードの再設定"), displayMode:.inline)

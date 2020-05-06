@@ -20,45 +20,52 @@ struct ChangeEmailView: View {
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false) {
-            VStack{
-                VStack(alignment: .leading){
-                    HStack {
-                        Text("メールアドレス")
-                            .foregroundColor(Color.primary)
-                        if isInvalidEmail {
-                            Text("入力してください")
-                                .foregroundColor(.red)
-                        }
-                    }
-                    .padding()
-                    .padding(.top)
-                    TextField("メールアドレス", text: $email)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                    HStack {
-                        Text("パスワード")
-                            .foregroundColor(Color.primary)
-                        if isInvalidPassword {
-                            Text("入力してください")
-                                .foregroundColor(.red)
-                        }
-                    }
-                    .padding()
-                    SecureField("パスワード", text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
+            ZStack {
+                Color.white
+                    .edgesIgnoringSafeArea(.all)
+                    .onTapGesture {
+                        UIApplication.shared.closeKeyboard()
                 }
-                Button(action: {
-                    self.reauthenticate()
-                }){
-                    Text("送信")
+                VStack{
+                    VStack(alignment: .leading){
+                        HStack {
+                            Text("メールアドレス")
+                                .foregroundColor(Color.primary)
+                            if isInvalidEmail {
+                                Text("入力してください")
+                                    .foregroundColor(.red)
+                            }
+                        }
                         .padding()
-                        .padding(.leading)
-                        .padding(.trailing)
-                        .foregroundColor(Color.white)
-                        .background(Color.gray)
-                        .cornerRadius(10)
-                        .shadow(radius: 5)
+                        .padding(.top)
+                        TextField("メールアドレス", text: $email)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
+                        HStack {
+                            Text("パスワード")
+                                .foregroundColor(Color.primary)
+                            if isInvalidPassword {
+                                Text("入力してください")
+                                    .foregroundColor(.red)
+                            }
+                        }
+                        .padding()
+                        SecureField("パスワード", text: $password)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
+                    }
+                    Button(action: {
+                        self.reauthenticate()
+                    }){
+                        Text("送信")
+                            .padding()
+                            .padding(.leading)
+                            .padding(.trailing)
+                            .foregroundColor(Color.white)
+                            .background(Color.gray)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                    }
                 }
             }
             .navigationBarTitle(Text("メールアドレス変更"), displayMode:.inline)
