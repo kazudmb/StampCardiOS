@@ -18,38 +18,41 @@ struct ChangePasswordView: View {
     
     var body: some View {
         
-        VStack{
-            VStack(alignment: .leading){
-                Text("登録時に入力したメールアドレスを入力してください。パスワード再設定の手順を送信します。")
-                    .foregroundColor(Color.primary)
-                    .padding()
-                HStack {
-                    Text("メールアドレス")
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack{
+                VStack(alignment: .leading){
+                    Text("登録時に入力したメールアドレスを入力してください。パスワード再設定の手順を送信します。")
                         .foregroundColor(Color.primary)
-                    if isInvalidEmail {
-                        Text("入力してください")
-                            .foregroundColor(.red)
+                        .padding()
+                        .padding(.top)
+                    HStack {
+                        Text("メールアドレス")
+                            .foregroundColor(Color.primary)
+                        if isInvalidEmail {
+                            Text("入力してください")
+                                .foregroundColor(.red)
+                        }
                     }
+                    .padding()
+                    TextField("メールアドレス", text: $email)
+                        .padding()
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
-                .padding()
-                TextField("メールアドレス", text: $email)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                Button(action: {
+                    self.sendPasswordResetEmail()
+                }){
+                    Text("送信")
+                        .padding()
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .foregroundColor(Color.white)
+                        .background(Color.gray)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
+                }
             }
-            Button(action: {
-                self.sendPasswordResetEmail()
-            }){
-                Text("送信")
-                    .padding()
-                    .padding(.leading)
-                    .padding(.trailing)
-                    .foregroundColor(Color.white)
-                    .background(Color.gray)
-                    .cornerRadius(10)
-                    .shadow(radius: 5)
-            }
+            .navigationBarTitle(Text("パスワードの再設定"), displayMode:.inline)
         }
-        .navigationBarTitle(Text("パスワードの再設定"), displayMode:.inline)
     }
     
     private func sendPasswordResetEmail() {

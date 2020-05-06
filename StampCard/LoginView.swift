@@ -21,68 +21,71 @@ struct LoginView: View {
     @Binding var isShowLoginView: Bool
     
     var body: some View {
-        VStack{
-            VStack(alignment: .leading){
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack {
+                VStack(alignment: .leading){
+                    HStack {
+                        Text("メールアドレス")
+                            .foregroundColor(Color.primary)
+                        if isInvalidEmail {
+                            Text("入力してください")
+                                .foregroundColor(.red)
+                        }
+                    }
+                    .padding()
+                    .padding(.top)
+                    TextField("メールアドレス", text: $email)
+                        .padding()
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    HStack {
+                        Text("パスワード")
+                            .foregroundColor(Color.primary)
+                        if isInvalidPassword {
+                            Text("入力してください")
+                                .foregroundColor(.red)
+                        }
+                    }
+                    .padding()
+                    SecureField("パスワード", text: $password)
+                        .padding()
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                Button(action: {
+                    self.Login()
+                }){
+                    Text("ログイン")
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(Color.gray)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
+                }
                 HStack {
-                    Text("メールアドレス")
-                        .foregroundColor(Color.primary)
-                    if isInvalidEmail {
-                        Text("入力してください")
-                            .foregroundColor(.red)
+                    Button(action: {
+                        self.isShowChangePasswordView.toggle()
+                    }){
+                        Text("＊パスワードを忘れた方はこちら")
+                            .foregroundColor(Color.accentColor)
+                    }
+                    Button(action: {
+                        self.isShowCreateAccountView.toggle()
+                    }){
+                        Text("新規登録")
+                            .foregroundColor(Color.accentColor)
                     }
                 }
                 .padding()
-                TextField("メールアドレス", text: $email)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                HStack {
-                    Text("パスワード")
-                        .foregroundColor(Color.primary)
-                    if isInvalidPassword {
-                        Text("入力してください")
-                            .foregroundColor(.red)
-                    }
+                .padding(.top)
+                .navigationBarTitle(Text("ログイン"), displayMode:.inline)
+                NavigationLink(destination: ChangePasswordView(isShowChangePasswordView: $isShowChangePasswordView), isActive: $isShowChangePasswordView) {
+                    EmptyView()
                 }
-                .padding()
-                SecureField("パスワード", text: $password)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-            Button(action: {
-                self.Login()
-            }){
-                Text("ログイン")
-                    .padding()
-                    .foregroundColor(Color.white)
-                    .background(Color.gray)
-                    .cornerRadius(10)
-                    .shadow(radius: 5)
-            }
-            HStack {
-                Button(action: {
-                    self.isShowChangePasswordView.toggle()
-                }){
-                    Text("＊パスワードを忘れた方はこちら")
-                        .foregroundColor(Color.primary)
+                .isDetailLink(false)
+                NavigationLink(destination: CreateAccountView(isShowLoginView: $isShowLoginView), isActive: $isShowCreateAccountView) {
+                    EmptyView()
                 }
-                Button(action: {
-                    self.isShowCreateAccountView.toggle()
-                }){
-                    Text("新規登録")
-                        .foregroundColor(Color.primary)
-                }
+                .isDetailLink(false)
             }
-            .padding()
-            .padding(.top)
-            .navigationBarTitle(Text("ログイン"), displayMode:.inline)
-            NavigationLink(destination: ChangePasswordView(isShowChangePasswordView: $isShowChangePasswordView), isActive: $isShowChangePasswordView) {
-                EmptyView()
-            }
-            .isDetailLink(false)
-            NavigationLink(destination: CreateAccountView(isShowLoginView: $isShowLoginView), isActive: $isShowCreateAccountView) {
-                EmptyView()
-            }
-            .isDetailLink(false)
         }
     }
     

@@ -20,45 +20,48 @@ struct CreateAccountView: View {
     
     var body: some View {
         
-        VStack{
-            VStack(alignment: .leading){
-                HStack {
-                    Text("メールアドレス")
-                        .foregroundColor(Color.primary)
-                    if isInvalidEmail {
-                        Text("入力してください")
-                            .foregroundColor(.red)
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack{
+                VStack(alignment: .leading){
+                    HStack {
+                        Text("メールアドレス")
+                            .foregroundColor(Color.primary)
+                        if isInvalidEmail {
+                            Text("入力してください")
+                                .foregroundColor(.red)
+                        }
                     }
-                }
-                .padding()
-                TextField("メールアドレス", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                HStack {
-                    Text("パスワード")
-                        .foregroundColor(Color.primary)
-                    if isInvalidPassword {
-                        Text("入力してください")
-                            .foregroundColor(.red)
+                    .padding(.top)
+                    TextField("メールアドレス", text: $email)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                    HStack {
+                        Text("パスワード")
+                            .foregroundColor(Color.primary)
+                        if isInvalidPassword {
+                            Text("入力してください")
+                                .foregroundColor(.red)
+                        }
                     }
+                    .padding()
+                    SecureField("パスワード", text: $password)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
                 }
-                .padding()
-                SecureField("パスワード", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                Button(action:{
+                    self.CreateAccount()
+                }) {
+                    Text("新規登録")
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(Color.gray)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
+                }
             }
-            Button(action:{
-                self.CreateAccount()
-            }) {
-                Text("新規登録")
-                    .padding()
-                    .foregroundColor(Color.white)
-                    .background(Color.gray)
-                    .cornerRadius(10)
-                    .shadow(radius: 5)
-            }
+            .navigationBarTitle(Text("新規登録"), displayMode:.inline)
         }
-        .navigationBarTitle(Text("新規登録"), displayMode:.inline)
     }
     
     private func CreateAccount() {
