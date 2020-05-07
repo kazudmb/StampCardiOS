@@ -96,7 +96,6 @@ struct CreateAccountView: View {
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
-                numberOfVisitsGlobal = 0
                 self.sendEmailVerification()
                 self.isShowLoginView.toggle()
                 print("Document successfully written!")

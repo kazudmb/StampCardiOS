@@ -11,4 +11,3 @@ import Foundation
 import Firebase
 
 var firebaseUser: User?
-var numberOfVisitsGlobal = 0
