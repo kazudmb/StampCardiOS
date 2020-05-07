@@ -237,7 +237,6 @@ struct ContentView: View {
             db.collection("users").document("\(String(firebaseUser?.uid ?? ""))").getDocument { (document, err) in
                 if let document = document, document.exists {
                     self.numberOfVisits = document.data()?["NumberOfVisits"] as? Int ?? 0
-                    numberOfVisitsGlobal = self.numberOfVisits
                     self.setStamp()
                     let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                     print("Document data: \(dataDescription)")
@@ -245,6 +244,9 @@ struct ContentView: View {
                     print("Document does not exist")
                 }
             }
+        } else {
+            self.numberOfVisits = 0
+            self.setStamp()
         }
     }
     
@@ -255,7 +257,7 @@ struct ContentView: View {
         }
         
         var loopCount = 0
-        let numberOfVisitsString: String = String(numberOfVisits)
+        let numberOfVisitsString: String = String(self.numberOfVisits)
         let numberOfCutOut = Int(numberOfVisitsString.suffix(1))
         
         if (numberOfCutOut == 0 && Int(numberOfVisitsString) ?? 0 < 10) {
