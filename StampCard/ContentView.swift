@@ -49,116 +49,115 @@ struct ContentView: View {
                         HStack {
                             if numberOfStampArea[0] {
                                 ZStack {
-                                    Image("logo_stamp_area_icon")
-                                        .border(Color.orange, width: 2)
-                                    Image("logo_approved")
-                                        .border(Color.orange, width: 2)
+                                    Image("logo_stamp_area_icon1")
+                                        .border(Color.secondary, width: 1)
+                                    Image("logo_stamp_icon")
+                                        .border(Color.secondary, width: 1)
                                 }
                             }  else {
-                                Image("logo_stamp_area_icon")
-                                    .border(Color.orange, width: 2)
+                                Image("logo_stamp_area_icon1")
+                                    .border(Color.secondary, width: 1)
                             }
                             if numberOfStampArea[1] {
                                 ZStack {
-                                    Image("logo_stamp_area_icon")
-                                        .border(Color.orange, width: 2)
-                                    Image("logo_approved")
-                                        .border(Color.orange, width: 2)
+                                    Image("logo_stamp_area_icon2")
+                                        .border(Color.secondary, width: 1)
+                                    Image("logo_stamp_icon")
+                                        .border(Color.secondary, width: 1)
                                 }
                             } else {
-                                Image("logo_stamp_area_icon")
-                                    .border(Color.orange, width: 2)
+                                Image("logo_stamp_area_icon2")
+                                    .border(Color.secondary, width: 1)
                             }
                             if numberOfStampArea[2] {
                                 ZStack {
-                                    Image("logo_stamp_area_icon")
-                                        .border(Color.orange, width: 2)
-                                    Image("logo_approved")
-                                        .border(Color.orange, width: 2)
+                                    Image("logo_stamp_area_icon3")
+                                        .border(Color.secondary, width: 1)
+                                    Image("logo_stamp_icon")
+                                        .border(Color.secondary, width: 1)
                                 }
                             } else {
-                                Image("logo_stamp_area_icon")
-                                    .border(Color.orange, width: 2)
+                                Image("logo_stamp_area_icon3")
+                                    .border(Color.secondary, width: 1)
                             }
                             if numberOfStampArea[3] {
                                 ZStack {
-                                    Image("logo_stamp_area_icon")
-                                        .border(Color.orange, width: 2)
-                                    Image("logo_approved")
-                                        .border(Color.orange, width: 2)
+                                    Image("logo_stamp_area_icon4")
+                                        .border(Color.secondary, width: 1)
+                                    Image("logo_stamp_icon")
+                                        .border(Color.secondary, width: 1)
                                 }
                             } else {
-                                Image("logo_stamp_area_icon")
-                                    .border(Color.orange, width: 2)
+                                Image("logo_stamp_area_icon4")
+                                    .border(Color.secondary, width: 1)
                             }
                             if numberOfStampArea[4] {
                                 ZStack {
-                                    Image("logo_stamp_area_icon")
-                                        .border(Color.orange, width: 2)
-                                    Image("logo_approved")
-                                        .border(Color.orange, width: 2)
+                                    Image("logo_stamp_area_icon5")
+                                        .border(Color.secondary, width: 1)
+                                    Image("logo_stamp_icon")
+                                        .border(Color.secondary, width: 1)
                                 }
                             } else {
-                                Image("logo_stamp_area_icon")
-                                    .border(Color.orange, width: 2)
+                                Image("logo_stamp_area_icon5")
+                                    .border(Color.secondary, width: 1)
                             }
                         }
-                        
                         HStack {
                             if numberOfStampArea[5] {
                                 ZStack {
-                                    Image("logo_stamp_area_icon")
-                                        .border(Color.orange, width: 2)
-                                    Image("logo_approved")
-                                        .border(Color.orange, width: 2)
+                                    Image("logo_stamp_area_icon6")
+                                        .border(Color.secondary, width: 1)
+                                    Image("logo_stamp_icon")
+                                        .border(Color.secondary, width: 1)
                                 }
                             } else {
-                                Image("logo_stamp_area_icon")
-                                    .border(Color.orange, width: 2)
+                                Image("logo_stamp_area_icon6")
+                                    .border(Color.secondary, width: 1)
                             }
                             if numberOfStampArea[6] {
                                 ZStack {
-                                    Image("logo_stamp_area_icon")
-                                        .border(Color.orange, width: 2)
-                                    Image("logo_approved")
-                                        .border(Color.orange, width: 2)
+                                    Image("logo_stamp_area_icon7")
+                                        .border(Color.secondary, width: 1)
+                                    Image("logo_stamp_icon")
+                                        .border(Color.secondary, width: 1)
                                 }
                             } else {
-                                Image("logo_stamp_area_icon")
-                                    .border(Color.orange, width: 2)
+                                Image("logo_stamp_area_icon7")
+                                    .border(Color.secondary, width: 1)
                             }
                             if numberOfStampArea[7] {
                                 ZStack {
-                                    Image("logo_stamp_area_icon")
-                                        .border(Color.orange, width: 2)
-                                    Image("logo_approved")
-                                        .border(Color.orange, width: 2)
+                                    Image("logo_stamp_area_icon8")
+                                        .border(Color.secondary, width: 1)
+                                    Image("logo_stamp_icon")
+                                        .border(Color.secondary, width: 1)
                                 }
                             } else {
-                                Image("logo_stamp_area_icon")
-                                    .border(Color.orange, width: 2)
+                                Image("logo_stamp_area_icon8")
+                                    .border(Color.secondary, width: 1)
                             }
                             if numberOfStampArea[8] {
                                 ZStack {
-                                    Image("logo_stamp_area_icon")
-                                        .border(Color.orange, width: 2)
-                                    Image("logo_approved")
-                                        .border(Color.orange, width: 2)
+                                    Image("logo_stamp_area_icon9")
+                                        .border(Color.secondary, width: 1)
+                                    Image("logo_stamp_icon")
+                                        .border(Color.secondary, width: 1)
                                 }
                             } else {
-                                Image("logo_stamp_area_icon")
-                                    .border(Color.orange, width: 2)
+                                Image("logo_stamp_area_icon9")
+                                    .border(Color.secondary, width: 1)
                             }
                             if numberOfStampArea[9] {
                                 ZStack {
-                                    Image("logo_stamp_area_icon")
-                                        .border(Color.orange, width: 2)
-                                    Image("logo_approved")
-                                        .border(Color.orange, width: 2)
+                                    Image("logo_stamp_area_icon10")
+                                        .border(Color.secondary, width: 1)
+                                    Image("logo_stamp_icon")
+                                        .border(Color.secondary, width: 1)
                                 }
                             } else {
-                                Image("logo_stamp_area_icon")
-                                    .border(Color.orange, width: 2)
+                                Image("logo_stamp_area_icon10")
+                                    .border(Color.secondary, width: 1)
                             }
                         }
                         
